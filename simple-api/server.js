@@ -4,6 +4,12 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const port = 3000;
 
+// Iniciar el servidor
+app.listen(port, () => {
+    console.log(`Servidor escuchando en http://localhost:${port}`);
+});
+
+
 // Middleware para analizar el cuerpo de las solicitudes1
 app.use(express.json());
 
@@ -101,7 +107,4 @@ app.delete('/tareas/:id', verificarToken, (req, res) => {
     res.status(200).json({ mensaje: 'Tarea eliminada' }); // Mensaje de éxito
 });
 
-// Iniciar el servidor
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+

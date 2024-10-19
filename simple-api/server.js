@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const port = 3000;
 
-// Middleware para analizar el cuerpo de las solicitudes
+// Middleware para analizar el cuerpo de las solicitudes1
 app.use(express.json());
 
 // Clave secreta para firmar el JWT

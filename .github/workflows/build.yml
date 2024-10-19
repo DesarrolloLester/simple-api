@@ -1,3 +1,4 @@
+name: CI/CD Pipeline for Node.js API
 on: push
 jobs:
   first-job:

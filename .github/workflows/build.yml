@@ -47,5 +47,17 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --severity-threshold=high
+          args: --sarif-file-output=snyk.sarif
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk.sarif
+      # Análisis de código con ESLint
+      - name: Run ESLint
+        run: npm install eslint
 
+
+      # Análisis de seguridad de código con CodeQL
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v2
+      

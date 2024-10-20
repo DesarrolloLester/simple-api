@@ -53,6 +53,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk1.sarif
-
+      - name: Grant permission to ESLint
+        run: chmod +x ./node_modules/.bin/eslint
+        
       - name: Run ESLint
         run: npm run lint

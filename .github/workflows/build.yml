@@ -29,7 +29,7 @@ jobs:
 
       # Paso 4: Ejecutar pruebas automatizadas
       - name: Run tests
-        run: npm test  # Asegúrate de que tienes un script de prueba en tu package.json
+        run: npx jest  # Asegúrate de que tienes un script de prueba en tu package.json
 
   # Job 2: Escaneo de vulnerabilidades
   security_scan:

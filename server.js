@@ -3,12 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const app = express();
 const port = 3000;
-
-// Iniciar el servidor
-app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
-});
-
+module.exports = app;
 
 // Middleware para analizar el cuerpo de las solicitudes1
 app.use(express.json());

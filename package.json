@@ -2,11 +2,11 @@
   "name": "simple-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "npm install"
-   
+    "start": "node index.js",
+    "build": "npm install",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

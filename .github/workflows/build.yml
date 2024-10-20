@@ -47,19 +47,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       # Paso 3: Instalar dependencias
       - name: Install dependencies
         run: npm install
-
+        
       # Paso 4: Escanear vulnerabilidades con Snyk
-      - name: Snyk vulnerability scan
-        uses: snyk/actions/node@v4
+        - name: Snyk vulnerability scan
+        uses: snyk/actions/node@v4  # Utiliza la versión etiquetada más reciente
         with:
-          args: test --severity-threshold=high
+          args: test --severity-threshold=high  # Escanea solo vulnerabilidades de severidad alta o superior
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  # Agrega tu token Snyk en GitHub Secrets
-
-
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  # Asegúrate de que el token esté correctamente configurado en Secrets
 

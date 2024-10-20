@@ -8,7 +8,8 @@ on:
     branches:
       - main
 permissions:
-  contents: read  # Da permiso de lectura al contenido del repositorio
+  contents: write
+  security-events: write
 jobs:
   # Job 1: Instalar dependencias y ejecutar pruebas automatizadas
   test:
@@ -49,7 +50,7 @@ jobs:
         with:
           args: --sarif-file-output=snyk.sarif
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: snyk.sarif
 

@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "build": "npm install",
-    "test": "jest"
+    "test": "jest",
+    "snyk-test": "snyk test --sarif-file-output=snyk1.sarif",
+    "snyk-code-test": "snyk code test --sarif-file-output=snyk1.sarif"
   },
   "keywords": [],
   "author": "",

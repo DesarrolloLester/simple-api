@@ -54,10 +54,4 @@ jobs:
           sarif_file: snyk.sarif
       # Análisis de código con ESLint
       - name: Run ESLint
-        run: npm install eslint
-
-
-      # Análisis de seguridad de código con CodeQL
-      - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v2
-      
+        run: npm run lint  

@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         run: npm test  # Asegúrate de que tienes un script de prueba en tu package.json
 
-  # Job 2: Escaneo de vulnerabilidades
+# Job 2: Escaneo de vulnerabilidades
   security_scan:
     runs-on: ubuntu-latest
     needs: test
@@ -47,14 +47,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       # Paso 3: Instalar dependencias
       - name: Install dependencies
         run: npm install
-        
+
       # Paso 4: Escanear vulnerabilidades con Snyk
-        - name: Snyk vulnerability scan
+      - name: Snyk vulnerability scan
         uses: snyk/actions/node@v4  # Utiliza la versión etiquetada más reciente
         with:
           args: test --severity-threshold=high  # Escanea solo vulnerabilidades de severidad alta o superior

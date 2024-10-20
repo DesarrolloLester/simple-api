@@ -7,7 +7,7 @@
     "start": "node index.js",
     "build": "npm install",
     "test": "jest",
-    "lint": "eslint . --ext .js,.ts"  // Script para ejecutar ESLint
+    "lint": "eslint . --ext .js,.ts"  
   },
   "keywords": [],
   "author": "",

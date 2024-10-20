@@ -55,9 +55,10 @@ jobs:
 
       # Paso 4: Escanear vulnerabilidades con Snyk
       - name: Snyk vulnerability scan
-        uses: snyk/actions/setup-node@v4 # Utiliza la versión etiquetada más reciente
-        with:
-          args: test --severity-threshold=high  # Escanea solo vulnerabilidades de severidad alta o superior
+        uses: snyk/actions/node@master # Utiliza la versión etiquetada más reciente
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  # Asegúrate de que el token esté correctamente configurado en Secrets
+        with:
+          args: test --severity-threshold=high  # Escanea solo vulnerabilidades de severidad alta o superior
+    
 

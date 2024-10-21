@@ -77,7 +77,7 @@ jobs:
 
         # Paso 5: Instalar Railway CLI
         - name: Install Railway CLI
-          run: npm install -g railway/cli
+          run: npm install -g @railway/cli
 
         # Paso 6: Autenticar con Railwayd
         - name: Authenticate with Railway

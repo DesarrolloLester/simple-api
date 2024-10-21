@@ -78,10 +78,8 @@ jobs:
         # Paso 5: Instalar Railway CLI
         - name: Install Railway CLI
           run: npm install -g @railway/cli
-          
+
         - name: Deploy to Railway
           env:
             RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           run: railway up
-
-       

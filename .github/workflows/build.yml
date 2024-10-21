@@ -54,6 +54,6 @@ jobs:
         with:
           sarif_file: snyk1.sarif
       - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
+        uses: returntocorp/semgrep-action@master
         with:
           config: "auto"  # Usar reglas automáticas de Semgrep para Node.js
